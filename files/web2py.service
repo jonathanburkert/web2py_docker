@@ -1,0 +1,11 @@
+[Unit]
+Description=Web2Py Container
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a web-ui
+ExecStop=/usr/bin/docker stop -t 2 web-ui
+
+[Install]
+WantedBy=multi-user.target
